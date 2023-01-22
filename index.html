@@ -8,8 +8,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 	<!-- -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="script.js"></script>
-	
+
 	<title>DnD character maker</title>
 	
 </head>
@@ -28,8 +27,8 @@
 			<h2>Identity</h2>
 			<div class="input-group">
 			  <span class="input-group-text">First and last name</span>
-			  <input type="text" aria-label="First name" class="form-control">
-			  <input type="text" aria-label="Last name" class="form-control">
+			  <input type="text" id="firstName" aria-label="First name" class="form-control">
+			  <input type="text" id="lastName" aria-label="Last name" class="form-control">
 			</div>
 			<div class="input-group">
 				<input class="form-control col-4 form-control-sm" type="number" placeholder="Age" aria-label=".form-control-sm">
@@ -37,34 +36,33 @@
 				<input class="form-control col-4 form-control-sm" type="number" placeholder="Weight" aria-label=".form-control-sm">
 			</div>
 			<div class="input-group">
-				<select class="form-select" id="class" aria-label=".form-select-lg">
-				  <option value="bard" selected>Bard</option>
+				<select class="form-select" id="classe" aria-label=".form-select-lg">
+				  <option value="bard">Bard</option>
 				  <option value="cleric">Cleric</option>
 				  <option value="fighter">Fighter</option>
 				  <option value="rogue">Rogue</option>
 				  <option value="wizard">Wizard</option>
 				</select>
 				<select class="form-select" id="race" aria-label=".form-select-lg">
-				  <option value="human" selected>Human</option>
+				  <option value="human">Human</option>
 				  <option value="dwarf">Dwarf</option>
 				  <option value="elf">Elf</option>
-				  <option value="halfling">Halfling</option>
 				  <option value="halfling">Halfling</option>
 				</select>
 			</div>
 			<div class="input-group">
 				<select class="form-select" id="background" aria-label=".form-select-lg">
-				  <option value="acolyte" selected>Acolyte</option>
+				  <option value="acolyte">Acolyte</option>
 				  <option value="criminal">Criminal</option>
 				  <option value="entertainer">Entertainer</option>
 				  <option value="soldier">Solider</option>
 				</select>
 				<select class="form-select" id="alignment" aria-label=".form-select-lg">
-				  <option value="lg" selected>Lawful Good</option>
+				  <option value="lg">Lawful Good</option>
 				  <option value="ng">Neutral Good</option>
 				  <option value="ln">Lawful Neutral</option>
 				  <option value="n">Neutral</option>
-				  <option value="cn" selected>Chaotic Neutral</option>
+				  <option value="cn">Chaotic Neutral</option>
 				  <option value="le">Lawful Evil</option>
 				  <option value="ne">Neutral Evil</option>
 				  <option value="ce">Chaotic Evil</option>
@@ -135,7 +133,7 @@
 					</select>
 			</div>
 			<div class="input-group justify-content-end val">
-				<button type="button" class="btn btn-secondary" >Random</button>
+				<button type="button" id="random" class="btn btn-secondary" >Random</button>
 				<button type="button" class="btn btn-outline-secondary" >Valider</button>	
 			</div>
 		</form>
@@ -146,7 +144,8 @@
 	
 	<footer>
 	</footer>
-
+	<script type="text/javascript" src="script.js"></script>
+	
 </body>
 
 </html>
