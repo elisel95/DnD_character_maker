@@ -43,3 +43,8 @@ h2 {
 @media print {
   #print{ display:none;}
 }
+
+@media (max-width: 500px) { 
+.main {margin:0;
+	   padding:5px;}
+}
