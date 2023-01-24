@@ -39,3 +39,7 @@ h2 {
 .val{
 	margin-top:30px;
 }
+
+@media print {
+  #print{ display:none;}
+}

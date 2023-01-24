@@ -29,9 +29,8 @@ $("#random").click(function(){
 	let classe = classes[getRandomInt(0, classes.length)];
 	
 	$("#race").append("<option value='"+race+"' selected>"+race+"</option>");
-	//console.log(race);
 	$("#classe").append("<option value='"+classe+"' selected>"+classe+"</option>");
-	//console.log(classe);
+
 	//END RACES AND CLASSES
 	
 	//BACKGROUND & ALIGNMENT
@@ -42,9 +41,7 @@ $("#random").click(function(){
 	let alignment = alignments[getRandomInt(0, alignments.length)];
 	
 	$("#background").append("<option value='"+background+"' selected>"+background+"</option>");
-	//console.log(background);
 	$("#alignment").append("<option value='"+alignment+"' selected>"+alignment+"</option>");
-	//console.log(alignment);
 	//END BACKGROUND & ALIGNMENT
 	
 	//ABILITY SCORE
@@ -67,56 +64,6 @@ $("#random").click(function(){
 	
 	//SKILLS
 	let skills = ["athletics","acrobatics","sleight of hand","stealth","arcana","history","investigation","nature","religion","animal handling","insight","medicine","perception","survival","deception","intimidation","performance","persuasion"];
-	
-	//console.log(skills);
-	
-	let s1 = skills[getRandomInt(0, skills.length)];
-	$("#s1").val(s1);	
-	//console.log(s1);
-	//This function delete the value already picked from the array skills (avoid duplicates)
-	var skill1 = skills.indexOf(s1);
-	if (skill1 !== -1) {
-		skills.splice(skill1, 1);
-	}
-	
-	let s2 = skills[getRandomInt(0, skills.length)];
-	var skill2 = skills.indexOf(s2);
-	if (skill2 !== -1) {
-		skills.splice(skill2, 1);
-	}
-	$("#s2").val(s2);
-
-
-	/*let s3 = skills[getRandomInt(0, skills.length)];
-	var myIndex = skills.indexOf(s3);
-	if (myIndex !== -1) {
-		skills.splice(myIndex, 1);
-	}
-	$("#s3").val(s3);
-	
-	let s4 = skills[getRandomInt(0, skills.length)];
-	var myIndex = skills.indexOf(s4);
-	if (myIndex !== -1) {
-		skills.splice(myIndex, 1);
-	}
-	$("#s4").val(s4);
-	
-	let s5 = skills[getRandomInt(0, skills.length)];
-	var myIndex = skills.indexOf(s5);
-	if (myIndex !== -1) {
-		skills.splice(myIndex, 1);
-	}
-	$("#s5").val(s5);
-	
-	let s6 = skills[getRandomInt(0, skills.length)];
-	var myIndex = skills.indexOf(s6);
-	if (myIndex !== -1) {
-		skills.splice(myIndex, 1);
-	}
-	$("#s6").val(s6);
-	// */
-	//console.log(skills);
-
 	//END SKILLS
 	
 	//EQUIPMENT
@@ -125,18 +72,10 @@ $("#random").click(function(){
 	
 	let armor = armors[getRandomInt(0, armors.length)];
 	let weapon = weapons[getRandomInt(0, weapons.length)];
-	
-	$("#armor").append("<option value='"+armor+"' selected>"+armor+"</option>");
-	//console.log(armor);
-	$("#weapons").append("<option value='"+weapon+"' selected>"+weapon+"</option>");
-	//console.log(weapon);
-	
 	//END EQUIPMENT
 	
 	//CONDITION
 	//We delete the picked classe & race 
-	
-	//CLASSES
 	var myClasse = classes.indexOf(classe);
 	if (myClasse !== -1) {
 		classes.splice(myClasse, 1);
@@ -146,14 +85,13 @@ $("#random").click(function(){
 	if (myRace !== -1) {
 		races.splice(myRace, 1);
 	};
-	
+
+	//CLASSES
 	//WIZARD
 	//If Wizard isn't in "classes" = it's the picked value and then we can work with it.
 	var wizard = classes.indexOf("Wizard");
 	if (wizard !== -1) {
-		//console.log("Moldu !!!");
 	}else{
-		//console.log("Tu es un sorcier Harry !");
 		$("#armor").append("<option value='' selected></option>");
 		let weapons = ["Daggers", "darts", "slings", "quarterstaffs", "light crossbows"];
 		let weapon = weapons[getRandomInt(0, weapons.length)];
@@ -287,13 +225,10 @@ $("#random").click(function(){
 		$("#pv").val(pv);
 	};
 	//END CLERIC
-	//RACES
-	
+	//RACES	
 	var dwarf = races.indexOf("Dwarf");
-	//console.log(dwarf);
 	if (dwarf === -1) {
 		$("#s3").val("Languages : Common & Dwarvish");
-		console.log("Diggin' a hole");
 	};
 	
 	var elf = races.indexOf("Elf");
@@ -311,12 +246,46 @@ $("#random").click(function(){
 		let languages = ["Dwarvish","Halfling","Elvish"];
 		let language = languages[getRandomInt(0, languages.length)];
 		$("#s3").val("Languages : Common & "+language+"");
-		console.log(language);
 	};
-
 	//END RACES
 	
 	//END CONDITION
 });
 
 //END FUNCTION RANDOM
+
+//GO BUTTON
+$("#go").click(function(){
+	
+	//Collect value
+	let firstName = $("#firstName").val();
+	let lastName = 	$("#lastName").val();
+	let pv = $("#pv").val();
+	let race = $("#race").val();
+	let classe = $("#classe").val();
+	let background = $("#background").val();
+	let alignment = $("#alignment").val();
+	let strength = $("#strength").val();	
+	let dexterity = $("#dexterity").val();	
+	let constitution = $("#constitution").val();	
+	let intelligence = $("#intelligence").val();	
+	let winsdom = $("#winsdom").val();	
+	let charisma = $("#charisma").val();
+	let s1 = $("#s1").val();
+	let s2 = $("#s2").val();
+	let s3 = $("#s3").val();
+	let armor = $("#armor").val();
+	let weapon = $("#weapons").val();	
+	
+	//show them in html
+	$(".main").html(
+	
+		"<h1 style='text-align:center;'>"+firstName+" "+lastName+"</h1><br><div style='text-align:center;' class='row'><p>"+pv+" hp  |  "+race+"  |  "+classe+"  |  "+background+"  |  "+alignment+"</p><br> <hr> <h3>Ability</h3><div class='col-6'><ul style='list-style-type:none;'><li>Strength : "+strength+"</li><li>Dexterity : "+dexterity+"</li><li>Winsdom : "+winsdom+"</li></ul></div><div class='col-6'><ul style='list-style-type:none;'><li>Constitution : "+constitution+"</li><li>Intelligence : "+intelligence+"</li><li>Charisma : "+charisma+"</li></ul></div><br><hr><h3>Skills</h3><div class='col-4'>"+s1+"</div><div class='col-4'>"+s2+"</div><div class='col-4'>"+s3+"</div><br><br><hr><h3>Equipment</h3><div class='col-6'>"+armor+"</div><div class='col-6'>"+weapon+"</div><br><br><br><button id='print' type='button' class='btn btn-outline-secondary'>Print it !</button></div>"
+	);
+	
+	//print function
+	$("#print").click(function(){
+		window.print();
+	});
+});
+//END GO BUTTON
