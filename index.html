@@ -31,11 +31,7 @@
 			  <input type="text" id="lastName" aria-label="Last name" class="form-control">
 			</div>
 			<div class="input-group">
-				<input class="form-control col-4 form-control-sm" type="number" placeholder="Age" aria-label=".form-control-sm">
-				<input class="form-control col-4 form-control-sm" type="number" placeholder="Height" aria-label=".form-control-sm">
-				<input class="form-control col-4 form-control-sm" type="number" placeholder="Weight" aria-label=".form-control-sm">
-			</div>
-			<div class="input-group">
+				<input class="form-control col-4 form-control-sm" id="pv" type="number" placeholder="Hit Point" aria-label=".form-control-sm">
 				<select class="form-select" id="classe" aria-label=".form-select-lg">
 				  <option value="bard">Bard</option>
 				  <option value="cleric">Cleric</option>
@@ -104,26 +100,27 @@
 			<hr>
 			<h2>Skills</h2>
 			<div class="input-group">
-				<input class="form-control col-4 form-control-sm" type="text" placeholder="Darkvision" aria-label=".form-control-sm">
-				<input class="form-control col-4 form-control-sm" type="text" placeholder="Keen Senses" aria-label=".form-control-sm">
-				<input class="form-control col-4 form-control-sm" type="text" placeholder="Transe" aria-label=".form-control-sm">
+				<input class="form-control col-4 form-control-sm" type="text" id="s1" placeholder="Darkvision" aria-label=".form-control-sm">
+				<input class="form-control col-4 form-control-sm" type="text" id="s2" placeholder="Keen Senses" aria-label=".form-control-sm">
+				<input class="form-control col-4 form-control-sm" type="text" id="s3" placeholder="Transe" aria-label=".form-control-sm">
 			</div>
-						<div class="input-group">
-				<input class="form-control col-4 form-control-sm" type="text" placeholder="Acrobatics" aria-label=".form-control-sm">
-				<input class="form-control col-4 form-control-sm" type="text" placeholder="History" aria-label=".form-control-sm">
-				<input class="form-control col-4 form-control-sm" type="text" placeholder="Perception" aria-label=".form-control-sm">
-			</div>
+			<!--
+			<div class="input-group">
+				<input class="form-control col-4 form-control-sm" type="text" id="s4" placeholder="Acrobatics" aria-label=".form-control-sm">
+				<input class="form-control col-4 form-control-sm" type="text" id="s5" placeholder="History" aria-label=".form-control-sm">
+				<input class="form-control col-4 form-control-sm" type="text" id="s6" placeholder="Perception" aria-label=".form-control-sm">
+			</div>-->
 			<!-- -->
 			<hr>
 			<h2>Equipment</h2>
 			<div class="input-group">
 				<select class="form-select" id="armor" aria-label=".form-select-lg">
-					  <option value="leather" selected>Leather Armor</option>
+					  <option value="leather">Leather Armor</option>
 					  <option value="chain">Chain Mail</option>
 					  <option value="light">Light Armor</option>
 					</select>
 					<select class="form-select" id="weapons" aria-label=".form-select-lg">
-					  <option value="hCrossbow" selected>Hand Crossbow</option>
+					  <option value="hCrossbow">Hand Crossbow</option>
 					  <option value="lSword">Long Sword</option>
 					  <option value="sSword">Short Sword</option>
 					  <option value="lBow">Long Bow</option>
@@ -145,6 +142,8 @@
 	<footer>
 	</footer>
 	<script type="text/javascript" src="script.js"></script>
+	
+	<!-- Rules based on https://www.aidedd.org -->
 	
 </body>
 
